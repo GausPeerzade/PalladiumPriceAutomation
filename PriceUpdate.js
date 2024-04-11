@@ -1,4 +1,4 @@
-import { PricOracle } from "./Oracle.js";
+import { PriceOracle } from "./Oracle.js";
 (function () {
     return moment().tz("Asia/Kolkata").format() + " ";
 });
@@ -11,7 +11,7 @@ import {
 import * as dotenv from "dotenv";
 dotenv.config();
 async function autoCompound() {
-    // const timeOut = 10000;
+    // const timeOut = 10000;  
     const timeOut = 300000;
 
     //fetch secret
@@ -22,7 +22,7 @@ async function autoCompound() {
         harvester_private_key = process.env.HARVESTER_PRIVATE_KEY;
     }
 
-    const BtcOracle = new PricOracle(harvester_private_key);
+    const BtcOracle = new PriceOracle(harvester_private_key);
     let locked = false;
     while (true) {
         await new Promise((resolve) => setTimeout(resolve, timeOut));

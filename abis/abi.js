@@ -3955,6 +3955,61 @@ const priceOracleAbi = [
     "anonymous": false
   }
 ];
+
+const mockAggregatorAbi=[
+  {
+    "type": "constructor",
+    "inputs": [
+      { "name": "initialAnswer", "type": "int256", "internalType": "int256" },
+      { "name": "decimals_", "type": "uint8", "internalType": "uint8" },
+      { "name": "initialRoundId", "type": "uint80", "internalType": "uint80" }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "decimals",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "uint8", "internalType": "uint8" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "latestRoundData",
+    "inputs": [],
+    "outputs": [
+      { "name": "roundId", "type": "uint80", "internalType": "uint80" },
+      { "name": "answer", "type": "int256", "internalType": "int256" },
+      { "name": "startedAt", "type": "uint256", "internalType": "uint256" },
+      { "name": "updatedAt", "type": "uint256", "internalType": "uint256" },
+      {
+        "name": "answeredInRound",
+        "type": "uint80",
+        "internalType": "uint80"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "setLatestAnswer",
+    "inputs": [
+      { "name": "newAnswer", "type": "int256", "internalType": "int256" }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "setRoundId",
+    "inputs": [
+      { "name": "newRoundId", "type": "uint80", "internalType": "uint80" }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  }
+];
+
 export {
   riveraFactoryAbi,
   stratAbi,
@@ -3963,4 +4018,5 @@ export {
   stakeAbi,
   stakeAlgebraAbi,
   priceOracleAbi,
+  mockAggregatorAbi,
 };

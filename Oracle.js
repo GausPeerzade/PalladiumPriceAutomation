@@ -31,11 +31,11 @@ class PriceOracle {
             }
         );
         const txReceipt = await txResponse.wait();
-        console.log(
-            `Gas price used: ${Number(
-                txReceipt.gasPrice
-            )}`
-        );
+        // console.log(
+        //     `Gas price used: ${Number(
+        //         txReceipt.gasPrice
+        //     )}`
+        // );
         // console.log(
         //     `Actual gas spent of the current transaction: ${Number(
         //         txReceipt.gasUsed

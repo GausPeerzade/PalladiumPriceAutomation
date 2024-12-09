@@ -12,7 +12,7 @@ import * as dotenv from "dotenv";
 dotenv.config();
 async function autoCompound() {
     // const timeOut = 10000;  
-    const timeOut = 300000;
+    const timeOut = 600000;
 
     //fetch secret
     let harvester_private_key;

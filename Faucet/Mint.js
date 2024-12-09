@@ -19,18 +19,18 @@ class Mint {
         const WBTC = new ethers.Contract(wbtcAddress, wBTCAbi, signer);
         const faucetBalance = await WBTC.balanceOf(faucetAddress);
         const oneWBTC = ethers.parseUnits("1", 18);
-        const tenWBTC = ethers.parseUnits("10", 18);
+        const hundredWBTC = ethers.parseUnits("100", 18);
         //faucet balance in wei
         // console.log(`Faucet balance: ${faucetBalance}`);
         
         if (faucetBalance < oneWBTC) {
             // console.log("Faucet balance low, refilling...");
-            const tx = await WBTC.mint(faucetAddress, tenWBTC, {
+            const tx = await WBTC.mint(faucetAddress, hundredWBTC, {
                 maxFeePerGas: 7,
                 maxPriorityFeePerGas: 7
             });
             const receipt = await tx.wait();
-            console.log("Refilled faucet with 10 WBTC");
+            console.log("Refilled faucet with 100 WBTC");
             // const faucetBalance = await WBTC.balanceOf(faucetAddress);
             // console.log(`Faucet balance: ${faucetBalance}`);
             // //gas price

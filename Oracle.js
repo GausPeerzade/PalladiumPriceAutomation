@@ -26,8 +26,8 @@ class PriceOracle {
         const txResponse = await OracleContract.setLatestAnswer(
             priceDeci,
             {
-                maxFeePerGas:7,
-                maxPriorityFeePerGas:7,
+                maxFeePerGas:10,
+                maxPriorityFeePerGas:10,
             }
         );
         const txReceipt = await txResponse.wait();

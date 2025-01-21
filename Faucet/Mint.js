@@ -10,7 +10,7 @@ class Mint {
     }
 
     async refillFaucet() {
-        const rpcUrl = "https://node.botanixlabs.dev";
+        const rpcUrl = "https://rpc.ankr.com/botanix_testnet";
         // const rpcUrl = "http://127.0.0.1:8545/";
         const wbtcAddress = "0x321f90864fb21cdcddD0D67FE5e4Cbc812eC9e64";
         const faucetAddress = "0x4721ec6d9409648b7f03503b3db4eFe2dE1C57c3";
@@ -26,8 +26,8 @@ class Mint {
         if (faucetBalance < oneWBTC) {
             // console.log("Faucet balance low, refilling...");
             const tx = await WBTC.mint(faucetAddress, hundredWBTC, {
-                maxFeePerGas: 7,
-                maxPriorityFeePerGas: 7
+                maxFeePerGas:100,
+                maxPriorityFeePerGas:100,
             });
             const receipt = await tx.wait();
             console.log("Refilled faucet with 100 WBTC");

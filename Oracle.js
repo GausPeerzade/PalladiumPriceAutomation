@@ -20,9 +20,10 @@ class PriceOracle {
 
         const [, answer] = await chainlinkBtcUsd.latestRoundData();
         const priceDeci = answer;
-        console.log(priceDeci.toString());
+        // console.log(priceDeci.toString());
 
-        const rpcUrl = "https://rpc.ankr.com/botanix_testnet";
+        // const rpcUrl = "https://rpc.ankr.com/botanix_testnet";
+        const rpcUrl = "https://node.botanixlabs.dev";
         // const rpcUrl = "http://127.0.0.1:8545/";
         const contractAddress = "0xc014933c805825D335e23Ef12eB92d2471D41DA7";
         const provider = new ethers.JsonRpcProvider(rpcUrl);
@@ -37,11 +38,11 @@ class PriceOracle {
             }
         );
         const txReceipt = await txResponse.wait();
-        // // console.log(
-        // //     `Gas price used: ${Number(
-        // //         txReceipt.gasPrice
-        // //     )}`
-        // // );
+        // console.log(
+        //     `Gas price used: ${Number(
+        //         txReceipt.gasPrice
+        //     )}`
+        // );
         // // console.log(
         // //     `Actual gas spent of the current transaction: ${Number(
         // //         txReceipt.gasUsed

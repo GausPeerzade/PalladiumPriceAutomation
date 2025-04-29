@@ -10,7 +10,7 @@ class PriceOracle {
     }
 
     async setPrice() {
-        const ethProvider = new ethers.JsonRpcProvider("https://arbitrum.llamarpc.com");
+        const ethProvider = new ethers.JsonRpcProvider("https://arb1.arbitrum.io/rpc");
         // Connect to Chainlink BTC/USD Price Feed on Arbitrum
         const chainlinkBtcUsd = new ethers.Contract(
             "0x6ce185860a4963106506C203335A2910413708e9",
@@ -29,6 +29,7 @@ class PriceOracle {
         const provider = new ethers.JsonRpcProvider(rpcUrl);
         const signer = new ethers.Wallet(this.harvester_private_key, provider);
         const OracleContract = new ethers.Contract(contractAddress, mockAggregatorAbi, signer);
+        
         const txResponse = await OracleContract.setLatestAnswer(
             priceDeci
             ,
